@@ -2,11 +2,7 @@ import pygame as pg
 pg.init()
 
 #colors
-red=(255,0,0)
-pink=(250,100,200)
-white=(255,255,255)
-black=(0,0,0)
-green=(0,255,0)
+red,pink, white, black, green=(255,0,0),(250,100,200),(255,255,255),(0,0,0),(0,255,0)
 
 #variables
 #w,h = pg.display.get_desktop_sizes()[0]
@@ -21,14 +17,11 @@ if bot==1:
 
 #functions
 def squares(n,m):
-    l=[]
-    c=[]
+    l,c=[],[]
     for xc in range(n):
-        l2=[]
-        c2=[]
-        for yc in range(m):
-            l2.append(1)
-            c2.append(red)
+        l2,c2=[],[]
+        l2=[1]*m
+        c2=[red]*m
         l.append(l2)
         c.append(c2)
     return l,c
@@ -97,4 +90,5 @@ while game:
     pg.display.update()
     if t[0][0]==0:
         game=False
+
     clock.tick(60)
